@@ -1,0 +1,28 @@
+<h1> interpolação </h1>
+
+<p>String com interpolação: {{ url }}</p>
+<p>1 + 1 = {{ 1 + 1}}</p>
+
+<h1>Property Binding</h1>
+<img [src]="urlimagem">
+<img bind-src="urlimagem">
+
+<h1>Event binding</h1>
+
+<input type="text" (keyup)="onKeyUp($event)" 
+(keyup.enter)="armazenarValor(campoInput.value)" #campoInput>
+
+<p>valor Atual: {{ valorAtual }}</p>
+<p>valor Atual: {{ valorArmazenado }}</p>
+
+<br>
+
+<span 
+  (mouseover)="onMouseOver()"
+  (mouseout)="onMouseOut()"
+  [class.highlight]="isMouseOver"
+> Passe o Mouse</span>
+
+<p>{{ isMouseOver }}</p>
+
+
