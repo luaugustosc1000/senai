@@ -12,6 +12,12 @@ export class DataBindingComponent implements OnInit {
   valorArmazenado: string = "";
   valorAtual: string = "";
   isMouseOver: boolean = false;
+  showMessage: boolean = false;
+  classe: string = "alert alert-danger";
+  boolean = false;
+  valorAtualCss: string = "";
+
+
   constructor() { }
 
   ngOnInit() {
@@ -20,6 +26,8 @@ export class DataBindingComponent implements OnInit {
   onKeyUp(evento: KeyboardEvent) {
     this.valorAtual = ((<HTMLInputElement>evento.target).value);
   }
+
+
   armazenarValor(valor: string) {
     this.valorArmazenado=valor;
   }
@@ -30,5 +38,13 @@ export class DataBindingComponent implements OnInit {
 
   onMouseOut() {
     this.isMouseOver = false;
+  }
+
+  changeShowMessage(){
+    this.showMessage = !this.showMessage;
+  }
+
+  onEnter(valor: string) {
+    this.classe = valor;
   }
 }
