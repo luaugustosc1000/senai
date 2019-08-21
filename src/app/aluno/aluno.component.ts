@@ -7,23 +7,26 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AlunoComponent implements OnInit {
 
-  alunosDesenv: string [] = [];
-  alunosRedes: string[] = [];
+  private alunosDesenv: string[] = [];
+  private alunosRedes: string[] = [];
   @Input() curso: string = '';
 
   constructor() { }
 
   ngOnInit() {
-    this.alunosDesenv = ['pedro','joao', 'maria'];
+    this.alunosDesenv = ['pedro', 'jose', 'maria'];
     this.alunosRedes = ['teobaldo', 'gertrudez', 'enesio'];
   }
 
-    getAlunos() {
-      if(this.curso === 'desenvolvimento'){
-        return this.alunosDesenv;
-      }
-      if(this.curso === 'redes') {
-        return this.alunosRedes;
-      }
+  getAlunos() {
+    if (this.curso === 'desenvolvimento') {
+      return this.alunosDesenv;
     }
+    
+    if (this.curso === 'redes') {
+      return this.alunosRedes;
+    }
+    return [];
+  }
+
 }

@@ -7,16 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataBindingComponent implements OnInit {
 
-  url: string = "http://sc.senai.br/";
+  url: string = "https://estudante.sc.senai.br";
   urlimagem: string = "http://lorempixel.com/400/200/sports/";
   valorArmazenado: string = "";
   valorAtual: string = "";
-  isMouseOver: boolean = false;
+  isMouseOVer: boolean = false;
+
   showMessage: boolean = false;
   classe: string = "alert alert-danger";
-  boolean = false;
-  valorAtualCss: string = "";
-
 
   constructor() { }
 
@@ -24,23 +22,22 @@ export class DataBindingComponent implements OnInit {
   }
 
   onKeyUp(evento: KeyboardEvent) {
-    this.valorAtual = ((<HTMLInputElement>evento.target).value);
+    this.valorAtual = (<HTMLInputElement>evento.target).value;
   }
 
-
   armazenarValor(valor: string) {
-    this.valorArmazenado=valor;
+    this.valorArmazenado = valor;
   }
 
   onMouseOver() {
-    this.isMouseOver = true;
+    this.isMouseOVer = true;
   }
 
   onMouseOut() {
-    this.isMouseOver = false;
+    this.isMouseOVer = false;
   }
 
-  changeShowMessage(){
+  changeShowMessage() {
     this.showMessage = !this.showMessage;
   }
 

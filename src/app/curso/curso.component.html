@@ -1,3 +1,40 @@
-<input placeholder="digite o nome do curso" class="form-control">
+<br>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form-horizontal" >
+    <div class="form-group">
+        
+         <div class="col-sm-12">
+            <label for="nome" class="control-label">Nome</label>
+         </div>
+            
+        <div class="col-sm-12">
+            <input type="text" class="form-control" name="nome" id="nome" 
+            placeholder="Nome" required #nome="ngModel" [(ngModel)]= "curso.nome">
+        </div>
+    </div>
 
-<app-aluno [curso]= "cursoAtual"></app-aluno>
+    <div class="form-group">
+         <div class="col-sm-12">
+            <label for="descricao" class="control-label">descricao</label>
+        </div>
+            
+        <div class="col-sm-12">
+            <input type="text" name="descricao" id="descricao" class="form-control" 
+            placeholder="Descricao" #descricao="ngModel" [(ngModel)]= "curso.descricao">
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        <div class="col-sm-12">
+            <label for="email" class="control-label">Email</label>
+        </div>
+            
+        <div class="col-sm-12">
+            <input type="text" email class="form-control" name="email" id="email" 
+            placeholder="E-mail contato" #email="ngModel" [(ngModel)]= "curso.email">
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submeter</button>
+    
+</form>
